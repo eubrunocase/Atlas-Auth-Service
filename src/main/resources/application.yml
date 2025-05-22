@@ -1,0 +1,33 @@
+
+server:
+  port: 8081
+
+spring:
+  application:
+    name: Atlas-Auth-Service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/atlas_authservice
+    username: brunocase
+    password: case
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    dialect: org.hibernate.dialect.PostgreSQLDialect
+
+api:
+  security:
+    token:
+      secret: "OUJWeHM3OUJMPi80SzQ7O0tsQWFNZHtYOmopYWVJVFYK"
+      oauth2:
+        authorizationserver:
+          issuer-uri: http://localhost:8081/auth
+
+logging:
+  level:
+    org.springframework.security: TRACE
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka

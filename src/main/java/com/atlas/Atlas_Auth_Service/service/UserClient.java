@@ -21,22 +21,6 @@ public class UserClient {
         this.tokenService = tokenService;
     }
 
-    /*
-     Encaminha solicitação de registro para o user-service
-     */
-//    public void register(RegisterDTO dto) {
-//        restTemplate.postForEntity("http://localhost:8082/internal/users", dto, Void.class);
-//    }
-
-//    public void registerUser (RegisterDTO dto) {
-//        try {
-//        String url = "http://localhost:8082/internal/users";
-//        restTemplate.postForEntity(url, dto, Void.class);
-//        } catch (HttpClientErrorException e) {
-//            System.out.println("ERRO AO CHAMAR USER SERVICE " + e.getStatusCode());
-//            throw new RuntimeException("Erro ao registrar usuário" + e);
-//        }
-//    }
 
     public void registerUser(RegisterDTO dto, String token) {
         try {
